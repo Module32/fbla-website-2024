@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: rgb(255, 255, 255);
+}
+
+.inversion {
+  filter: invert(1);
+  mix-blend-mode: difference;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.text-stroke-black {
+  -webkit-text-stroke: 1px black;
+}
+
+.text-stroke-indigo {
+  -webkit-text-stroke: 1px #6366f1;
+}
+
+th:first-of-type {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+th:last-of-type {
+  border-top-right-radius: 10px;
+}
+tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+}
+
+/* Render items as columns */
+.masonry {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+/* Re-order items into rows */
+.masonry-item:nth-child(3n + 1) {
+  order: 1;
+}
+.masonry-item:nth-child(3n + 2) {
+  order: 2;
+}
+.masonry-item:nth-child(3n) {
+  order: 3;
+}
+
+/* Force new columns */
+.masonry::before,
+.masonry::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
