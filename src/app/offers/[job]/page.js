@@ -28,7 +28,7 @@ export default function Home() {
     <main className="flex flex-col items-center">
       {job && (
         <div className="lg:w-[85%] md:w-[90%] w-full">
-          <div className="z-10 sticky top-[71px] py-2 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-600 text-white uppercase font-normal italic overflow-x-hidden flex space-x-4">
+          <div className="z-10 sticky top-[129px] py-2 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-600 text-white uppercase font-normal italic overflow-x-hidden flex space-x-4">
             <div className="py-1 animate-marquee whitespace-nowrap flex space-x-4">
               {new Array(5).fill("").map((x, i) => {
                 return (
@@ -85,7 +85,7 @@ export default function Home() {
                     </Link>
                   </div>
                   <div className="flex lg:flex-row md:flex-row flex-col lg:items-center md:items-center">
-                    <p className="mt-4 text-black font-bold text-5xl flex-1">
+                    <p className="mt-4 text-black font-bold lg:text-5xl text-4xl flex-1">
                       {job.name}
                     </p>
                     <div className="w-fit">
@@ -100,18 +100,18 @@ export default function Home() {
 
                   <hr className="my-6 border-stone-300" />
 
-                  <p className="font-medium text-3xl">Summary</p>
-                  <p className="mt-4 text-stone-600 text-2xl font-light lg:w-[90%]">
+                  <p className="font-medium lg:text-3xl text-2xl">Summary</p>
+                  <p className="mt-4 text-stone-600 lg:text-2xl text-xl font-light lg:w-[90%]">
                     {job.desc}
                   </p>
 
                   <hr className="my-6 border-stone-300" />
 
-                  <p className="font-medium text-3xl">Requirements</p>
+                  <p className="font-medium lg:text-3xl text-2xl">Requirements</p>
                   <ul className="mt-4 flex flex-col space-y-2 list-disc list-inside">
                     {job.requirements.map((x, i) => {
                       return (
-                        <li key={i} className="text-stone-600 text-2xl font-light">
+                        <li key={i} className="text-stone-600 lg:text-2xl text-xl font-light">
                           {x}
                         </li>
                       );
@@ -120,12 +120,12 @@ export default function Home() {
 
                   <hr className="my-6 border-stone-300" />
 
-                  <p className="font-medium text-3xl">Available in...</p>
-                  <div className="mt-4 flex flex-wrap gap-4">
+                  <p className="font-medium lg:text-3xl text-2xl">Available in...</p>
+                  <div className="mt-4 flex flex-wrap lg:gap-4 md:gap-3 gap-2">
                     {continents.map((x, i) => {
                       return (
                         <p
-                          className="text-2xl font-light bg-sky-500 text-white px-1.5 py-1 rounded flex items-center"
+                          className="lg:text-2xl text-xl font-light bg-sky-500 text-white px-1.5 py-1 rounded flex items-center"
                           key={i}
                         >
                           <FontAwesomeIcon
@@ -141,11 +141,11 @@ export default function Home() {
                   <hr className="my-6 border-stone-300" />
 
                   <div className="bg-[radial-gradient(#e0e7ff_0%,#f3e8ff_40%,rgba(255,255,255,0.00)_80%)]">
-                    <p className="font-medium text-3xl">
+                    <p className="font-medium lg:text-3xl text-2xl">
                       Don&apos;t take our word!
                     </p>
-                    <p className="lg:w-[90%] mt-4 text-2xl bg-clip-text text-transparent bg-gradient-to-br from-stone-900 to-slate-500">
-                      <span className="text-4xl font-bold italic mr-2.5 text-indigo-500">
+                    <p className="lg:w-[90%] mt-4 lg:text-2xl text-xl bg-clip-text text-transparent bg-gradient-to-br from-stone-900 to-slate-500">
+                      <span className="lg:text-4xl text-3xl font-bold italic mr-2.5 text-indigo-500">
                         &quot;
                       </span>
                       {job.quote.text}
@@ -193,7 +193,7 @@ export default function Home() {
               </div>
 
               <div className="lg:basis-1/4 border-x lg:border-l-0 lg:border-t-0 border-t border-stone-300 py-8 px-8 bg-stone-50">
-                <div className="sticky top-[150px]">
+                <div className="sticky top-[200px]">
                   <p className="mt-4 text-3xl font-medium text-twine-500">
                     Perks with every job.
                     <br />

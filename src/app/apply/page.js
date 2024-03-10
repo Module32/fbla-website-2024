@@ -37,6 +37,7 @@ export default function Application() {
 
   const pos = searchParams.get("pos");
   const email = searchParams.get("email");
+  const goToFinal = searchParams.get("page");
 
   useEffect(() => {
     if (email) {
@@ -44,7 +45,20 @@ export default function Application() {
       data.email = email;
       setPage1Data(data);
     }
-  }, [email])
+  }, [email]);
+
+  useEffect(() => {
+    if (goToFinal && goToFinal.length > 0) {
+      setPage1Data({
+        firstName: "Test",
+        lastName: "User",
+        email: "testemail@email.com",
+        number: "000-000-0000",
+      });
+      setJobPos("Digital Media Specialist");
+      setPage(4);
+    }
+  }, [goToFinal]);
 
   useEffect(() => {
     if (pos && pos.length > 0) setJobPos(pos.split("-").join(" "));
@@ -147,8 +161,8 @@ export default function Application() {
           </p>
           <div className="mt-4 flex items-center space-x-3">
             <Image
-              src={`/ekya.png`}
-              alt={'Ekya'}
+              src={`/people/ekya.png`}
+              alt={"Ekya"}
               width={40}
               height={40}
               className="rounded-full"
@@ -208,8 +222,8 @@ export default function Application() {
             </p>
             <div className="mt-4 flex items-center space-x-3">
               <Image
-                src={`/yash.png`}
-                alt={'Yash'}
+                src={`/people/yash.png`}
+                alt={"Yash"}
                 width={40}
                 height={40}
                 className="rounded-full"
@@ -228,19 +242,31 @@ export default function Application() {
         <div className="lg:w-1/2 w-full bg-stone-100 border-l lg:border-t-0 border-t border-stone-200 lg:px-[10vw] md:px-[5vw] px-4 lg:py-24 py-8">
           {pos && pos.length > 0 && (
             <div className="mb-4 rounded-lg p-2 border border-indigo-500 bg-indigo-100 text-indigo-500">
-              <p className='font-medium'>
+              <p className="font-medium">
                 You&apos;re filling out this application for{" "}
                 <span className="italic">{pos.split("-").join(" ")}</span>.
               </p>
               <p className="text-sm text-indigo-400">
                 If you&apos;d like to apply for a different position, click{" "}
                 <Link href="/apply">
-                  <u className='text-indigo-500'>here</u>
+                  <u className="text-indigo-500">here</u>
                 </Link>
                 .
               </p>
             </div>
           )}
+          <div className="mb-4 rounded-lg p-2 border border-sky-500 bg-sky-100 text-sky-500">
+            <p className="font-medium">Are you judging our website for FBLA?</p>
+            <p className="text-sm text-sky-400">
+              <Link href="/apply?page='final'">
+                <u className="text-sky-500">
+                  Click here for an example page of what happens when your
+                  application is submitted!
+                </u>
+              </Link>
+              .
+            </p>
+          </div>
           <AnimatePresence mode="wait">
             {page === 1 && (
               <motion.div
@@ -248,9 +274,9 @@ export default function Application() {
                 initial={{ opacity: 0, translateY: 20 }}
                 animate={{ opacity: 1, translateY: 0 }}
                 exit={{ opacity: 0, translateY: 20 }}
-                className="sticky top-[150px]"
+                className="sticky top-[175px]"
               >
-                <form className="sticky top-[150px]" action={page1submit}>
+                <form className="sticky top-[175px]" action={page1submit}>
                   <p className="text-xl font-medium">General Information</p>
 
                   <div className="mt-4 flex space-x-4">
@@ -280,7 +306,7 @@ export default function Application() {
                     <input
                       name="email"
                       type="email"
-                      defaultValue={email && email.split("\"").join("")}
+                      defaultValue={email && email.split('"').join("")}
                       placeholder="john.doe@email.com"
                       className="mt-2 w-full bg-white p-2 rounded-lg border border-stone-300 placeholder:text-stone-400"
                       required
@@ -387,9 +413,9 @@ export default function Application() {
                 initial={{ opacity: 0, translateY: 20 }}
                 animate={{ opacity: 1, translateY: 0 }}
                 exit={{ opacity: 0, translateY: 20 }}
-                className="sticky top-[150px]"
+                className="sticky top-[175px]"
               >
-                <form className="sticky top-[150px]" action={page2submit}>
+                <form className="sticky top-[175px]" action={page2submit}>
                   <p className="text-xl font-medium">Just a few questions</p>
 
                   <div className="mt-4 space-y-3 flex flex-col">
@@ -407,7 +433,10 @@ export default function Application() {
                       ["Are you a veteran?", "veteranYes", "veteranNo"],
                     ].map((x, i) => {
                       return (
-                        <div key={i} className="bg-white shadow-sm border border-stone-300 p-2 rounded-lg flex items-center">
+                        <div
+                          key={i}
+                          className="bg-white shadow-sm border border-stone-300 p-2 rounded-lg flex items-center"
+                        >
                           <p className="font-medium flex-1">{x[0]}</p>
                           <div className="flex items-center space-x-3">
                             <div className="flex items-center space-x-1 ml-4">
@@ -439,9 +468,9 @@ export default function Application() {
                 initial={{ opacity: 0, translateY: 20 }}
                 animate={{ opacity: 1, translateY: 0 }}
                 exit={{ opacity: 0, translateY: 20 }}
-                className="sticky top-[150px]"
+                className="sticky top-[175px]"
               >
-                <form className="sticky top-[150px]" action={page3submit}>
+                <form className="sticky top-[175px]" action={page3submit}>
                   <p className="text-xl font-medium">Job position</p>
 
                   <Tippy
@@ -450,7 +479,8 @@ export default function Application() {
                         <div className="flex flex-col">
                           {jobs.map((x, i) => {
                             return (
-                              <div key={i}
+                              <div
+                                key={i}
                                 className="w-full p-3 hover:bg-stone-200 transition hover:cursor-pointer"
                                 onClick={() => setJobPos(x.name)}
                               >
@@ -506,7 +536,10 @@ export default function Application() {
                           <div className="flex flex-col space-y-1">
                             {jobData.requirements.map((x, i) => {
                               return (
-                                <div key={i} className="flex items-center space-x-2 text-stone-700">
+                                <div
+                                  key={i}
+                                  className="flex items-center space-x-2 text-stone-700"
+                                >
                                   <FontAwesomeIcon
                                     icon={faCircle}
                                     className="text-stone-500 scale-[.5]"
@@ -523,7 +556,10 @@ export default function Application() {
                           <div className="flex flex-col space-y-1">
                             {benefits.map((x, i) => {
                               return (
-                                <div key={i} className="flex items-center space-x-2 text-stone-700">
+                                <div
+                                  key={i}
+                                  className="flex items-center space-x-2 text-stone-700"
+                                >
                                   <FontAwesomeIcon
                                     icon={faCheck}
                                     className="text-emerald-500 scale-[]"
@@ -595,7 +631,7 @@ export default function Application() {
               <motion.div
                 initial={{ opacity: 0, translateY: 20 }}
                 animate={{ opacity: 1, translateY: 0 }}
-                className="sticky top-[150px] h-[70vh] flex flex-col justify-center items-center text-center"
+                className="sticky top-[175px] h-[70vh] flex flex-col justify-center items-center text-center"
               >
                 <div>
                   <FontAwesomeIcon
@@ -694,7 +730,7 @@ export default function Application() {
                           </div>
                         </Link>
 
-                        <Link href="/">
+                        <Link href="/jobportal">
                           <div className="bg-sky-100 text-sky-500 border border-sky-500 p-2 rounded-lg w-full flex items-center">
                             <FontAwesomeIcon
                               icon={faWandMagicSparkles}

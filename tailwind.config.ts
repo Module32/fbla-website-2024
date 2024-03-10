@@ -74,7 +74,8 @@ const config: Config = {
       fontFamily: {
         serif: ["DM\\ Serif\\ Display"],
         sans: [ "-apple-system", "BlinkMacSystemFont", 'Inter' ],
-        oswald: [ "Oswald" ]
+        oswald: [ "Oswald" ],
+        spacegrotesk: [ "Space\\ Grotesk" ]
       },
       animation: {
         marquee: "marquee 25s linear infinite",
@@ -92,6 +93,8 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 export default config;

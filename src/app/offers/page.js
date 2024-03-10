@@ -51,7 +51,7 @@ export default function Home() {
       <div className="border-x border-stone-300 lg:w-[85%] md:w-[90%] w-full py-8 px-8">
         <div className="flex items-center">
           <div className="flex-1">
-            <p className="text-5xl font-bold">
+            <p className="lg:text-5xl text-4xl font-bold">
               <span className="text-stroke-black text-transparent">
                 Job Listings
               </span>
@@ -67,7 +67,7 @@ export default function Home() {
               </span>
               .
             </p>
-            <p className="text-2xl mt-4 text-stone-600">
+            <p className="lg:text-2xl md:text-xl lg:flex md:flex hidden mt-4 text-stone-600">
               VibeMagnet is looking for good vibes to hire!
               <br />
               Interested? Check out our open positions below.
@@ -76,7 +76,7 @@ export default function Home() {
 
           <div className="ml-auto xl:flex lg:flex hidden">
             <Image
-              src={`https://images.pexels.com/photos/1015568/pexels-photo-1015568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2`}
+              src={`/offerspage/peoplegathered.jpeg`}
               className="grayscale"
               alt={'People Gathered'}
               width={400}
@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="sticky top-[65px] lg:w-[85%] md:w-[90%] w-full py-2 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-600 text-white uppercase font-normal italic overflow-x-hidden flex space-x-4">
+      <div className="lg:w-[85%] md:w-[90%] w-full py-2 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-600 text-white uppercase font-normal italic overflow-x-hidden flex space-x-4">
         <div className="py-1 animate-marquee whitespace-nowrap flex space-x-4">
           {new Array(5).fill("").map((x, i) => {
             return (
@@ -130,7 +130,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-white border-x border-b sticky top-[110px] border-stone-300 lg:w-[85%] md:w-[90%] w-full py-3 px-8 h-full flex lg:flex-row md:flex-row flex-col lg:items-center md:items-center lg:space-x-2 md:space-x-2 lg:space-y-0 md:space-y-0 space-y-1 font-mono">
+      <div className="bg-white border-x border-b sticky top-[129px] border-stone-300 lg:w-[85%] md:w-[90%] w-full py-3 px-8 h-full flex lg:flex-row md:flex-row flex-col lg:items-center md:items-center lg:space-x-2 md:space-x-2 lg:space-y-0 md:space-y-0 space-y-1 font-mono">
         <p className="">Looking for a specific position?</p>
         <input
           placeholder="Search for a position"

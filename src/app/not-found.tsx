@@ -6,7 +6,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 export default function Custom404() {
   return (
     <main>
-      <div className="h-[90vh] flex flex-col items-center justify-center p-4 text-center">
+      <div className="h-[60vh] flex flex-col items-center justify-center p-4 text-center">
         <p className='font-mono text-stone-700'>Error 404: Page Not Found</p>
         <p className='mt-1 font-medium text-3xl'>
           We&apos;re not getting any<br />good vibes from here.

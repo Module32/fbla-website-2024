@@ -1,6 +1,6 @@
 const navbarLinks = [
     {
-      name: "Benefits & Reasons",
+      name: "Benefits",
       link: "/benefits",
     },
     {

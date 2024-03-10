@@ -34,15 +34,15 @@ export default function JobPortal() {
     {
       jobPos: "Content Marketing Manager",
       firstName: "Brinmeet",
-      lastName: "Soin",
-      submittedAt: "January 12, 2024",
+      lastName: "Singh Soin",
+      submittedAt: "February 9, 2024",
       status: "Rejected",
     },
     {
       jobPos: "Digital Marketing Specialist",
       firstName: "Brinmeet",
-      lastName: "Soin",
-      submittedAt: "February 9, 2024",
+      lastName: "Singh Soin",
+      submittedAt: "January 12, 2024",
       status: "Pending review",
     },
   ];
@@ -50,7 +50,7 @@ export default function JobPortal() {
   const blogPosts = [
     {
       image:
-        "https://images.genius.com/13982da7e2d5a31c47f43728144abe40.1000x1000x1.png",
+        "/blog/yeat.png",
       title: "VibeMagnet Partners with Yeat for New Album Release",
       content:
         "Yeat has returned with a completely new album, and a completely new sound: 2093.",
@@ -63,7 +63,7 @@ export default function JobPortal() {
     },
     {
       image:
-        "https://www.apple.com/newsroom/videos/media/eyesight/posters/Apple-WWCD23-Vision-Pro-EyeSight-230605.jpg.large_2x.jpg",
+        "/blog/visionpro.jpg",
       title: "Apple Vision Pro Sales Boosted by VibeMagnet Advertising",
       content:
         "The Apple Vision Pro is the next big thing for Apple since the iPhone.",
@@ -76,7 +76,7 @@ export default function JobPortal() {
     },
     {
       image:
-        "https://images.popbuzz.com/images/633134?crop=16_9&width=660&relax=1&format=webp&signature=ZZqfGnKGDwNelEHjvP4K4_RKQEA=",
+        "/blog/usher.webp",
       title: "How We Got Usher All Over TikTok",
       content:
         "The Super Bowl, intense sweating, and a little moment with Alicia Keys -- all to boost his career even more.",
@@ -124,7 +124,7 @@ export default function JobPortal() {
             </p>
           </div>
 
-          <div className="overflow-auto z-[50] px-6 border-b flex items-center space-x-4 whitespace-nowrap font-medium sticky top-[71px] bg-white">
+          <div className="overflow-auto z-[50] px-6 border-b flex items-center space-x-4 whitespace-nowrap font-medium sticky top-[129px] bg-white">
             {[
               {
                 name: "Applications",
@@ -221,14 +221,14 @@ export default function JobPortal() {
                 {exampleApps.map((x, i) => {
                   return (
                     <div key={i} className="border border-stone-300 p-3 rounded flex flex-col space-y-2 shadow">
-                      <p className="space-x-2 flex flex-wrap items-center">
+                      <p className="gap-2 flex flex-wrap items-center">
                         <span className="font-medium">Position:</span>
                         <span className="border border-indigo-500 p-1 rounded bg-indigo-100 text-indigo-500 w-fit font-medium">
                           {x.jobPos}
                         </span>
                       </p>
 
-                      <p className="space-x-2 flex flex-wrap items-center">
+                      <p className="gap-2 flex flex-wrap items-center">
                         <span className="font-medium">Applicant Name:</span>
                         <span className="text-sky-500 flex flex-wrap items-center gap-1">
                           <FontAwesomeIcon icon={faAt} />
@@ -236,7 +236,7 @@ export default function JobPortal() {
                         </span>
                       </p>
 
-                      <p className="space-x-2 flex flex-wrap items-center">
+                      <p className="gap-2 flex flex-wrap items-center">
                         <span className="font-medium">Submission Time:</span>
                         <span className="p-1 rounded bg-stone-200 border border-stone-300 w-fit font-mono flex flex-wrap items-center gap-2">
                           <FontAwesomeIcon
@@ -247,7 +247,7 @@ export default function JobPortal() {
                         </span>
                       </p>
 
-                      <p className="space-x-2 flex flex-wrap items-center">
+                      <p className="gap-2 flex flex-wrap items-center">
                         <span className="font-medium">Current Status:</span>
                         <span
                           className={`p-2 py-1 border border-stone-300 rounded flex flex-wrap items-center gap-2 ${
@@ -438,7 +438,7 @@ export default function JobPortal() {
                   <div className="bg-[conic-gradient(#f0f9ff,#c7d2fe,#ecfeff)] rounded-2xl border border-sky-200">
                     <div className="backdrop-blur-xl p-4 rounded-2xl bg-gradient-to-tr from-sky-300/20 via-transparent to-fuchsia-400/20">
                       <p className="text-2xl font-medium">
-                        It&apos;s great to know you, Ekya. Here are your
+                        It&apos;s great to know you, Brinmeet. Here are your
                         socials.
                       </p>
                       <div className="mt-2 flex flex-wrap gap-2">
@@ -446,27 +446,27 @@ export default function JobPortal() {
                           {
                             icon: faLinkedin,
                             color: "text-blue-500",
-                            data: "Ekya Dogra",
+                            data: "Brinmeet Singh Soin",
                           },
                           {
                             icon: faYoutube,
                             color: "text-red-500",
-                            data: "Dogra Man",
+                            data: "Brinmeet Boy",
                           },
                           {
                             icon: faTwitter,
                             color: "text-sky-500",
-                            data: "EkyaRai",
+                            data: "@Brinmeet",
                           },
                           {
                             icon: faGithub,
                             color: "text-black",
-                            data: "Module32",
+                            data: "Brinmeet Soin",
                           },
                           {
                             icon: faBriefcase,
                             color: "text-stone-500",
-                            data: "https://ekya.rai",
+                            data: "https://brinmeet.soin",
                           },
                         ].map((x, i) => {
                           return (

@@ -128,22 +128,22 @@ export default function Services() {
       <div className="border-x border-stone-300 lg:w-[85%] md:w-[90%] w-full py-16 px-8">
         <div className="flex items-center lg:flex-row flex-col lg:space-x-16">
           <div className="flex-1">
-            <p className="text-2xl uppercase text-stone-600 font-medium">
+            <p className="lg:text-2xl text-xl uppercase text-stone-600 font-medium">
               Services
             </p>
-            <p className="mt-2 text-5xl font-semibold">
+            <p className="mt-2 lg:text-5xl md:text-4xl text-3xl font-semibold">
               VibeMagnet employs{" "}
               <span className="text-amber-500">modern solutions</span>, for{" "}
               <span className="text-amber-500">modern companies</span>.
             </p>
-            <div className="h-[50px] lg:text-2xl md:text-2xl text-xl mt-4 p-1 border border-amber-500 rounded-full flex items-center space-x-1">
+            <div className="lg:space-y-0 space-y-1 lg:h-[50px] lg:text-2xl md:text-xl text-lg mt-4 p-1 border border-amber-500 lg:rounded-full rounded-xl flex lg:flex-row flex-col items-center lg:space-x-1">
               <input
-                className="w-full h-full focus:outline-none px-4 py-2 rounded-full font-mono"
+                className="w-full h-full focus:outline-sky-400 lg:px-4 px-2 py-2 lg:rounded-full rounded-t-xl font-mono"
                 placeholder="What solution are you looking for?"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <div className="bg-amber-500 hover:bg-amber-600 transition hover:cursor-pointer text-white w-fit rounded-full h-full px-4 flex items-center justify-center">
+              <div className="lg:w-fit w-full bg-amber-500 hover:bg-amber-600 transition hover:cursor-pointer text-white lg:rounded-full rounded-b-xl lg:py-0 py-2 h-full px-4 flex items-center justify-center">
                 <FontAwesomeIcon icon={faArrowRight} />
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function Services() {
                       return (
                         <button
                           key={i}
-                          className="hover:scale-[.97] transition border border-sky-500 bg-sky-100 text-sky-600 rounded-lg p-1 px-2 shadow-md shadow-sky-100"
+                          className="text-left hover:scale-[.97] transition border border-sky-500 bg-sky-100 text-sky-600 rounded-lg p-1 px-2 shadow-md shadow-sky-100"
                           onClick={() => setSearch(x.name)}
                         >
                           {x.name}
@@ -178,7 +178,7 @@ export default function Services() {
               )}
             </div>
           </div>
-          <div className="flex-1 lg:w-fit w-full lg:mt-0 mt-16">
+          <div className="lg:flex md:flex hidden flex-1 lg:w-fit w-full lg:mt-0 mt-16">
             <div className="border border-amber-500 outline outline-1 outline-offset-4 outline-stone-300 rounded-lg p-2 px-4">
               <div className="border-b border-stone-300 py-3">
                 <div className="flex items-center flex-wrap gap-2">
@@ -294,7 +294,7 @@ export default function Services() {
 
               <div className="py-3">
                 <div className="flex items-center flex-wrap gap-2">
-                  <Image src={"/yt.png"} alt="google" width={25} height={25} />
+                  <Image src={"/logos/yt.png"} alt="google" width={25} height={25} />
                   <p className="text-lg font-medium flex flex-wrap gap-2 items-center">
                     <span>YouTube Marketing</span>
                   </p>
@@ -381,7 +381,7 @@ export default function Services() {
               </div>
             </div>
             
-            <div>
+            <div className='lg:text-left lg:items-start text-center flex flex-col items-center'>
               <p className="text-3xl font-medium text-stone-800">
                 VibeMagnet is the industry&apos;s leading marketing firm.
                 <br />

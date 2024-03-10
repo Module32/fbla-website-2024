@@ -19,16 +19,16 @@ export default function SideBar() {
   ];
   return (
     <div className="xl:w-1/6 lg:w-1/5 w-full lg:border-b-0 border-b bg-stone-100 border-r border-stone-300 flex flex-col">
-      <div className="sticky top-[71px] flex lg:flex-col flex-row">
+      <div className="sticky top-[129px] flex flex-col">
         <div className="bg-[conic-gradient(#020617,#1e1b4b,#4c0519)]">
-          <div className="backdrop-blur-xl p-6 font-medium text-white bg-gradient-to-tr from-indigo-500/20 via-transparent to-fuchsia-400/20">
+          <div className="backdrop-blur-xl p-6 lg:py-6 py-4 font-medium text-white bg-gradient-to-tr from-indigo-500/20 via-transparent to-fuchsia-400/20">
             <p className="text-xl">VibeMagnet Job Portal</p>
             <p className="mt-2 font-light lg:flex hidden">
               Your personal dashboard, for career opportunities and latest news.
             </p>
           </div>
         </div>
-        <div className="p-4 flex-1">
+        <div className="p-4 lg:py-4 py-1 flex-1">
           <p className="mt-2 text-stone-400 px-2 lg:flex hidden">Navigate to</p>
           <div className="lg:mt-2 text-lg flex lg:flex-col flex-row whitespace-nowrap overflow-auto">
             {links.map((x, i) => {
@@ -55,9 +55,6 @@ export default function SideBar() {
                 Your Applications
               </p>
               <p className="mt-1 font-medium">1 pending, 1 rejected.</p>
-              <p className="mt-1 text-xs text-stone-700">
-                Powered by VibeMagnet automation.
-              </p>
             </div>
             <div className="bg-white border border-stone-300 p-2 rounded shadow">
               <p className="text-amber-500 font-medium">

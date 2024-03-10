@@ -35,7 +35,7 @@ function StartDiv() {
   });
 
   return (
-    <div className="h-[100vh] bg-[conic-gradient(#020617,#1e1b4b,#4c0519)] rounded-2xl text-white">
+    <div className="lg:h-[100vh] md:h-[90vh] h-[100vh] bg-[conic-gradient(#020617,#1e1b4b,#4c0519)] rounded-2xl text-white">
       <div className="h-full bg-gradient-to-bl from-indigo-500/20 via-transparent to-white/10 backdrop-blur-3xl flex flex-col items-center justify-center">
         <motion.div
           className="md:flex hidden absolute h-full lg:w-[85%] w-full -z-50 p-8 grayscale flex-col items-center justify-center"
@@ -101,7 +101,7 @@ function StartDiv() {
             transition={{ delay: 4.75, duration: 0.5 }}
           >
             <motion.div
-              initial={{ opacity: 0.25 }}
+              initial={{ opacity: 0.15 }}
               animate={{ opacity: 0.05 }}
               transition={{ delay: 6.25 }}
             >
@@ -179,7 +179,7 @@ function StartDiv() {
         </div>
 
         <motion.div
-          className="absolute h-[100vh] w-full bg-[conic-gradient(#020617,#1e1b4b,#4c0519)]"
+          className="absolute h-full w-full bg-[conic-gradient(#020617,#1e1b4b,#4c0519)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 7.75, duration: 0.5 }}
@@ -195,24 +195,25 @@ function StartDiv() {
             </motion.p>
 
             <div className="xl:text-8xl lg:text-7xl md:text-6xl text-5xl font-bold text-center">
-              <div className="mt-4 flex flex-wrap items-center justify-center text-center space-x-5">
+              <div className="mt-4 items-center justify-center text-center">
                 <p
                   className="text-transparent"
                   style={{ WebkitTextStroke: "1px white" }}
                 >
-                  You need
-                </p>
-                <p className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-slate-300 to-rose-300">
-                  marketers
-                </p>
-                <p
-                  className="text-transparent"
-                  style={{ WebkitTextStroke: "1px white" }}
-                >
-                  to stand out
-                </p>
-                <p className="py-3 bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-slate-300 to-rose-300">
-                  in the market.
+                  You need{" "}
+                  <span
+                    className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-slate-300 to-rose-300"
+                    style={{ WebkitTextStroke: "0px transparent" }}
+                  >
+                    marketers
+                  </span>{" "}
+                  to stand out{" "}
+                  <span
+                    className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-slate-300 to-rose-300"
+                    style={{ WebkitTextStroke: "0px transparent" }}
+                  >
+                    in the market.
+                  </span>
                 </p>
               </div>
               <p
@@ -222,7 +223,7 @@ function StartDiv() {
                 VibeMagnet&apos;s here for you.
               </p>
 
-              <p className="font-medium xl:text-3xl lg:text-2xl text-xl">
+              <p className="font-normal xl:text-3xl lg:text-2xl text-xl">
                 We&apos;ve gotten faces on billboards, companies in the Fortune
                 500, and influencers on the red carpet.
                 <br />
@@ -235,7 +236,7 @@ function StartDiv() {
                 on them.
               </p>
 
-              <div className="mt-12 w-full justify-center flex flex-wrap items-center space-x-2 md:text-3xl text-2xl font-medium">
+              <div className="md:mt-12 mt-8 w-full justify-center flex flex-wrap items-center space-x-2 lg:text-3xl md:text-2xl text-xl font-medium">
                 <Link href="/offers">
                   <div className="rounded-xl bg-gradient-to-r from-indigo-800 to-rose-800 shadow-md outline outline-1 outline-offset-4 outline-white/30 p-2 px-3 hover:scale-[.97] transition">
                     <p>👋 We&apos;re hiring! Check out job offers</p>
@@ -260,13 +261,13 @@ function PresentMomentDiv() {
   return (
     <div
       ref={scrollRef}
-      className="w-full border-t border-stone-300 px-8 py-12"
+      className="w-full border-t border-stone-300 px-8 py-12 bg-white"
     >
       <div className="flex lg:flex-row md:flex-row flex-col space-y-8 items-center">
-        <p className="font-bold lg:w-1/2 md:w-1/2 w-full lg:text-[4vw] md:text-[4.5vw] text-6xl leading-none">
+        <p className="font-bold lg:w-1/2 md:w-1/2 w-full lg:text-[4vw] md:text-[4.5vw] text-5xl leading-none">
           We get people in the present moment,
           <br />
-          <span className="text-maroon-flush">
+          <span className="text-maroon-flush-700">
             to make their presence known.
           </span>
         </p>
@@ -276,7 +277,7 @@ function PresentMomentDiv() {
           style={{ scale: useTransform(scrollYProgress, [0, 1], [0.5, 1.1]) }}
         />
 
-        <p className="lg:text-right md:text-right text-left ml-auto lg:w-1/2 md:w-1/2 w-full lg:text-[1.75vw] md:text-[2vw] leading-none text-4xl text-stone-600 font-extralight">
+        <p className="lg:text-right md:text-right text-left ml-auto lg:w-1/2 md:w-1/2 w-full lg:text-[1.75vw] md:text-[2vw] leading-none text-2xl text-stone-600 font-extralight">
           No matter what our clients are creating — a new product, company, or
           their own brand image — they need the right advertising.
           <br />
@@ -325,24 +326,58 @@ function BenefitsDiv() {
     },
   ];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (selected === "Vacations") {
+        setTimer(0);
+      } else {
+        setTimer(timer + 1);
+      }
+    }, 10000);
+
+    return () => clearInterval(interval);
+  });
+
+  useEffect(() => {
+    if (!jobBenefitsArr[timer]) {
+      setSelected("Community");
+      setTimer(0);
+    } else {
+      setSelected(jobBenefitsArr[timer].name);
+    }
+  }, [timer]);
+
+  useEffect(() => {
+    const arr = jobBenefitsArr.map((x) => {
+      return x.name;
+    });
+    setTimer(arr.indexOf(selected));
+  }, [selected]);
+
   return (
     <div
       ref={scrollRef}
-      className="w-full border-t border-stone-300 px-8 py-12 flex flex-col items-center justify-center text-center"
+      className="bg-white backdrop-blur-lg w-full border-t border-stone-300 px-8 py-12 flex flex-col items-center justify-center text-center"
     >
-      <p className="text-2xl font-medium text-stone-500">
+      <p className="md:text-2xl text-xl font-medium text-stone-500">
         Working at our company feels less like{" "}
-        <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-red-500 relative inline-block">
+        <span class="md:inline-block hidden before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-red-500 relative">
           <span class="relative text-white">work,</span>
-        </span>{" "}
-        and more like{" "}
-        <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-emerald-500 relative inline-block">
+        </span>
+        <span className="md:hidden inline-block text-red-500">work,</span> and
+        more like{" "}
+        <span class="md:inline-block hidden before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-emerald-500 relative">
           <span class="relative text-white">play.</span>
+        </span>
+        <span className="md:hidden inline-block text-emerald-500 relative">
+          play
         </span>
         .
       </p>
-      <p className="text-5xl font-semibold my-4">Job Benefits at VibeMagnet</p>
-      <div className="flex flex-wrap gap-4 justify-center text-xl">
+      <p className="lg:text-5xl md:text-4xl text-3xl font-semibold my-4">
+        Job Benefits at VibeMagnet
+      </p>
+      <div className="flex flex-wrap lg:gap-4 md:gap-3 gap-2 justify-center text-xl md:pb-0 pb-4 md:border-b-0 border-b border-stone-300">
         {jobBenefitsArr.map((x, i) => {
           return (
             <div
@@ -364,6 +399,7 @@ function BenefitsDiv() {
         animate={{ opacity: 1, scale: 1 }}
         transition={{
           duration: 0.2,
+          delay: 0.15,
         }}
         key={selected}
         className="mt-8 flex flex-col items-center"
@@ -372,15 +408,15 @@ function BenefitsDiv() {
           <img
             src={
               selected === "Community"
-                ? "https://media.istockphoto.com/id/1185622398/photo/young-business-people-in-office.jpg?s=612x612&w=0&k=20&c=GcuMGhAC5k7qTaWxjIdq3IXt7uEpE2MJ0BdWBoEWzxY="
+                ? "/benefits/diverse.jpg"
                 : selected === "Ethic"
-                ? "https://media.istockphoto.com/id/639678734/photo/great-things-can-only-be-achieved-together.jpg?s=612x612&w=0&k=20&c=dSgR10o1E_LUYzWeUFbwfJO8YdmAFrEdTOBZcl_jZx4="
+                ? "/benefits/ethics.jpg"
                 : selected === "Remote Work"
-                ? "https://images.pexels.com/photos/4974907/pexels-photo-4974907.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                ? "/benefits/remotework.jpeg"
                 : selected === "Salary"
-                ? "https://images.pexels.com/photos/6693661/pexels-photo-6693661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                ? "/benefits/salary.jpeg"
                 : selected === "Vacations"
-                ? "https://images.pexels.com/photos/914929/pexels-photo-914929.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                ? "/benefits/vacation.jpeg"
                 : ""
             }
             alt={selected}
@@ -405,7 +441,7 @@ function BenefitsDiv() {
                   </div>
                 );
               })}
-            <p className="text-3xl">
+            <p className="lg:text-3xl md:text-2xl text-xl">
               {selected === "Community" &&
                 "Work with people that love their job. We hire enthusiasts for everything — graphical design, photography, influencer marketing — so it's just like you're at home, with your people."}
               {selected === "Ethic" &&
@@ -420,6 +456,19 @@ function BenefitsDiv() {
           </div>
         </div>
       </motion.div>
+
+      <div className="mt-8 lg:w-1/2 md:w-3/4 w-full flex items-center space-x-4">
+        <div className="bg-stone-300 w-full rounded-full">
+          <motion.div
+            className="p-0.5 bg-emerald-500 rounded-full"
+            key={selected}
+            initial={{ width: "0%" }}
+            animate={{ width: "100%" }}
+            transition={{ duration: 10, repeat: Infinity }}
+          />
+        </div>
+        <p className="font-mono text-emerald-500">{timer}/5</p>
+      </div>
     </div>
   );
 }
@@ -434,76 +483,71 @@ function SocialMediaDiv() {
   return (
     <div
       ref={scrollRef}
-      className="w-full border-t border-stone-300 px-8 lg:h-[90vh] md:h-[90vh] h-[70vh] flex flex-col items-center justify-center text-center"
+      className="w-full border-t border-stone-300 px-8 lg:h-[90vh] md:h-[90vh] h-[80vh] flex flex-col items-center justify-center text-center"
     >
-      <div className="flex items-center space-x-16 mb-[130px]">
+      <div className="flex items-center lg:space-x-16 md:space-x-8 space-x-4 mb-[130px]">
         <motion.div
           style={{
-            translateY: useTransform(
-              scrollYProgress,
-              [0, 1],
-              [200, -200]
-            ),
+            translateY: useTransform(scrollYProgress, [0, 1], [200, -200]),
           }}
-          className={`flex`}
+          className={`flex -z-50`}
         >
-          <Image src={'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/640px-Instagram_logo_2022.svg.png'} alt='media' width="200" height="200" />
+          <Image
+            src={"/logos/insta.png"}
+            alt="media"
+            width="200"
+            height="200"
+          />
         </motion.div>
 
         <motion.div
           style={{
-            translateY: useTransform(
-              scrollYProgress,
-              [0, 1],
-              [0, 200]
-            ),
+            translateY: useTransform(scrollYProgress, [0, 1], [0, 200]),
           }}
-          className={`flex`}
+          className={`flex -z-50`}
         >
-          <Image src={'/tiktok.png'} width="200" height="200" />
+          <Image src={"/logos/tiktok.png"} width="200" height="200" />
         </motion.div>
 
         <motion.div
           style={{
-            translateY: useTransform(
-              scrollYProgress,
-              [0, 1],
-              [200, -200]
-            ),
+            translateY: useTransform(scrollYProgress, [0, 1], [200, -200]),
           }}
-          className={`flex`}
+          className={`flex -z-50`}
         >
-          <Image src={'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/X_logo_2023.svg/640px-X_logo_2023.svg.png'} alt='media' width="200" height="200" />
+          <Image src={"/logos/x.png"} alt="media" width="200" height="200" />
         </motion.div>
 
         <motion.div
           style={{
-            translateY: useTransform(
-              scrollYProgress,
-              [0, 1],
-              [0, 200]
-            ),
+            translateY: useTransform(scrollYProgress, [0, 1], [0, 200]),
           }}
           className={`md:flex hidden`}
         >
-          <Image src={'https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/640px-Facebook_f_logo_%282019%29.svg.png'} alt='media' width="200" height="200" />
+          <Image
+            src={"/logos/facebook.png"}
+            alt="media"
+            width="200"
+            height="200"
+          />
         </motion.div>
 
         <motion.div
           style={{
-            translateY: useTransform(
-              scrollYProgress,
-              [0, 1],
-              [200, -200]
-            ),
+            translateY: useTransform(scrollYProgress, [0, 1], [200, -200]),
           }}
           className={`md:flex hidden`}
         >
-          <Image src={'https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/768px-LinkedIn_icon.svg.png'} alt='media' width="200" height="200" />
+          <Image
+            src={"/logos/linkedin.png"}
+            alt="media"
+            width="200"
+            height="200"
+          />
         </motion.div>
       </div>
       <motion.p
-        className="font-medium text-stone-400 lg:text-[2vw] md:text-[2.5vw] text-xl mb-4"
+        className="font-medium text-stone-400 lg:text-[2vw] md:text-[2.5vw] text-lg"
         style={{
           opacity: useTransform(scrollYProgress, [0.3, 0.4], [0, 1]),
           scale: useTransform(scrollYProgress, [0.3, 0.4], [0.95, 1]),
@@ -512,20 +556,20 @@ function SocialMediaDiv() {
         Yeah, we&apos;re up-to-date
       </motion.p>
       <motion.p
-        className="lg:text-[4.5vw] md:text-[4.5vw] text-3xl leading-none font-bold text-transparent bg-clip-text bg-gradient-to-br from-stone-700 to-black"
+        className="lg:mt-4 md:mt-3 mt-2 lg:text-[4.5vw] md:text-[4.5vw] text-3xl leading-none font-bold text-transparent bg-clip-text bg-gradient-to-br from-stone-700 to-black"
         style={{
           opacity: useTransform(scrollYProgress, [0.4, 0.5], [0, 1]),
           scale: useTransform(scrollYProgress, [0.4, 0.5], [0.95, 1]),
         }}
       >
         We work with the most popular platforms on the{" "}
-        <span className="text-maroon-flush-500">
+        <span className="text-sky-600">
           planet <FontAwesomeIcon icon={faEarth} />
         </span>
         .
       </motion.p>
       <motion.p
-        className="pb-2 mt-6 lg:text-[3vw] md:text-[4.5vw] text-3xl leading-none font-semibold text-transparent bg-clip-text bg-gradient-to-br from-stone-700 to-stone-500 lg:w-3/4"
+        className="pb-2 lg:mt-6 md:mt-4 mt-2 lg:text-[3vw] md:text-[4.5vw] text-xl leading-none font-semibold text-transparent bg-clip-text bg-gradient-to-br from-stone-700 to-stone-500 lg:w-3/4"
         style={{
           opacity: useTransform(scrollYProgress, [0.5, 0.6], [0, 1]),
           scale: useTransform(scrollYProgress, [0.5, 0.6], [0.95, 1]),
@@ -544,7 +588,7 @@ function NineToFiveDiv() {
   return (
     <div
       ref={scrollRef}
-      className="w-full border-t border-stone-300 bg-[url('/9to5.png')] h-[80vh] bg-cover bg-fixed"
+      className="w-full border-t border-stone-300 bg-[url('/homepage/9to5.png')] h-[80vh] bg-cover bg-fixed"
     >
       <p className="absolute m-8 z-[1] lg:text-6xl md:text-4xl text-3xl font-bold text-stone-800">
         You don&apos;t have to
@@ -554,7 +598,7 @@ function NineToFiveDiv() {
         like this one.
       </p>
       <div className="absolute w-full h-[80vh] bg-gradient-to-br from-indigo-500 via-fuchsia-500/30 to-rose-500">
-        <div className="absolute w-full h-[80vh] bg-gradient-to-b from-white via-transparent to-white"></div>
+        <div className="absolute w-full h-[80vh] bg-gradient-to-b from-white via-transparent to-black"></div>
       </div>
     </div>
   );
@@ -578,22 +622,87 @@ function GetOutThereDiv() {
   };
 
   return (
-    <div ref={scrollRef} className="border-t border-stone-300">
-      <div className="">
-        <p className="lg:text-[4vw] md:text-[4.5vw] text-4xl leading-none font-bold z-[1] px-8 py-12 border-b border-stone-300">
-          At VibeMagnet, you can get out{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-sky-500">
-            into the world
-          </span>{" "}
-          — from{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-rose-500">
-            any part of the world
-          </span>
-          .
-          <br />
-          Find jobs near you, or work remotely with us.
-        </p>
-        <div className="gap-4 px-8 py-8">
+    <div
+      ref={scrollRef}
+      className="border-t border-stone-300 bg-black text-white"
+    >
+      <div className="bg-[url('/homepage/earth.jpeg')] bg-fixed bg-cover bg-center">
+        <div className="px-8 py-12 font-spacegrotesk font-light bg-gradient-to-b from-black via-black/50 to-transparent">
+          <p className="pt-8 lg:text-6xl md:text-5xl text-4xl leading-none z-[1]">
+            With a VibeMagnet job, you can connect with the rest of the world --
+            from any part of the world.
+          </p>
+
+          <div className="mt-6">
+            {[
+              {
+                location: "North America",
+                jobs: [
+                  "Digital Marketing Specialist",
+                  "Content Marketing Manager",
+                ],
+                plus: "5",
+              },
+              {
+                location: "South America",
+                jobs: ["Graphic Designer", "Copywriter"],
+                plus: "10",
+              },
+              {
+                location: "Europe",
+                jobs: ["Project Manager", "PR Specialist"],
+                plus: "3",
+              },
+              {
+                location: "Asia",
+                jobs: [
+                  "Client Services Manager",
+                  "Market Automation Specialist",
+                ],
+                plus: "7",
+              },
+              {
+                location: "Africa",
+                jobs: ["SEO Specialist", "Social Media Manager"],
+                plus: "5",
+              },
+              {
+                location: "Oceania",
+                jobs: ["Web Developer", "Analytics Specialist"],
+                plus: "8",
+              },
+            ].map((x, i) => {
+              return (
+                <div
+                  key={i}
+                  className="border-b border-white/50 lg:py-8 md:py-6 py-4 w-full lg:text-4xl md:text-3xl text-2xl"
+                >
+                  <div className="flex flex-wrap items-center lg:gap-4 md:gap-3 gap-2">
+                    <p className="uppercase">{x.location}</p>
+                    {x.jobs.map((_x, i) => {
+                      return (
+                        <div key={i}>
+                          <Link
+                            href={`/offers/${_x.split(" ").join("-")}`}
+                            key={i}
+                          >
+                            <p
+                              key={i}
+                              className="lg:text-3xl md:text-2xl text-xl bg-black/50 px-4 py-1 rounded-full border border-sky-300/40 shadow-md hover:scale-[.97] transition"
+                            >
+                              {_x}
+                            </p>
+                          </Link>
+                        </div>
+                      );
+                    })}
+                    <p className="text-white/60">+{x.plus} more</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          {/*<div className="gap-4 px-8 py-8">
           <div className="w-full flex flex-wrap overflow-auto gap-4">
             <motion.div
               className="border border-rose-600 rounded-xl lg:w-[300px] md:w-[350px] bg-[url('https://images.pexels.com/photos/4058226/pexels-photo-4058226.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover w-full h-[400px] flex flex-col items-start"
@@ -772,6 +881,7 @@ function GetOutThereDiv() {
               </div>
             </motion.div>
           </div>
+            </div>*/}
         </div>
       </div>
     </div>
@@ -790,7 +900,7 @@ function TestimonialsDiv() {
       },
       company: {
         name: "@askvijay",
-        image: "/yt.png",
+        image: "/logos/yt.png",
         width: 40,
       },
     },
@@ -802,7 +912,7 @@ function TestimonialsDiv() {
       },
       company: {
         name: "Stark Industries",
-        image: "/starkindustries.png",
+        image: "/logos/starkindustries.png",
         width: 120,
       },
     },
@@ -814,21 +924,24 @@ function TestimonialsDiv() {
       },
       company: {
         name: "Apple",
-        image: "/apple.png",
+        image: "/logos/apple.png",
         width: 40,
       },
     },
   ];
 
   return (
-    <div className="border-t border-stone-300 h-[70vh] bg-gradient-to-br from-fuchsia-100 to-rose-50 flex justify-center items-center">
+    <div className="border-t border-stone-300 lg:h-[70vh] md:h-[80vh] bg-gradient-to-br from-fuchsia-100 to-rose-50 flex justify-center items-center">
       <div
         className="px-4 text-purple-500 h-full flex items-center hover:cursor-pointer bg-gradient-to-r from-white/75 hover:text-purple-700 transition"
         onClick={() =>
           page === 0 ? setPage(tests.length - 1) : setPage(page - 1)
         }
       >
-        <FontAwesomeIcon icon={faAngleLeft} className="text-5xl" />
+        <FontAwesomeIcon
+          icon={faAngleLeft}
+          className="lg:text-5xl md:text-4xl text-3xl"
+        />
       </div>
       <motion.div
         className="flex-1 flex items-start space-x-6 lg:px-24 md:px-16 px-4 py-12"
@@ -844,7 +957,15 @@ function TestimonialsDiv() {
           alt={tests[page].name}
         />
         <div>
-          <p className="lg:text-5xl md:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-fuchsia-900 to-indigo-900">
+          <Image
+            src={tests[page].author.image}
+            width={75}
+            height={75}
+            className="rounded-full md:hidden flex mb-4"
+            alt={tests[page].name}
+          />
+
+          <p className="lg:text-5xl md:text-4xl text-xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-fuchsia-900 to-indigo-900">
             &quot;{tests[page].text}&quot;
           </p>
           <p className="mt-4 text-2xl">
@@ -852,7 +973,7 @@ function TestimonialsDiv() {
               {tests[page].author.name}
             </span>
           </p>
-          <div className="mt-8 text-lg text-stone-500 flex items-center space-x-2 grayscale">
+          <div className="mt-8 text-lg text-stone-500 flex flex-wrap items-center gap-4 grayscale">
             <Image
               src={tests[page].company.image}
               width={tests[page].company.width}
@@ -869,7 +990,10 @@ function TestimonialsDiv() {
           page === tests.length - 1 ? setPage(0) : setPage(page + 1)
         }
       >
-        <FontAwesomeIcon icon={faAngleRight} className="text-5xl" />
+        <FontAwesomeIcon
+          icon={faAngleRight}
+          className="lg:text-5xl md:text-4xl text-3xl"
+        />
       </div>
     </div>
   );
@@ -883,109 +1007,6 @@ export default function Home() {
       </div>
 
       <div className="relative border-x border-stone-300 lg:w-[85%] md:w-[90%] w-full">
-        {/*<div className="flex h-[90vh] bg-cover">
-          <div className="px-8 py-8 flex flex-col justify-center backdrop-blur-sm b w-full bg-gradient-to-br from-indigo-100 via-white to-rose-100">
-            <div className="">
-              <motion.p
-                animate={{
-                  opacity: 1,
-                  translateY: 0,
-                }}
-                initial={{
-                  opacity: 0,
-                  translateY: 20,
-                }}
-                transition={{
-                  delay: 0,
-                }}
-                className="font-bold lg:text-[5vw] md:text-[6vw] text-6xl leading-none"
-              >
-                Your company needs{" "}
-                <span className="text-indigo-500">marketing</span> to succeed{" "}
-                <span className="text-rose-500">in the market</span>
-                .
-                <br />
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-indigo-500 via-30% to-rose-500">
-                  VibeMagnet&apos;s here for you.
-                </span>
-              </motion.p>
-              <motion.p
-                animate={{
-                  opacity: 1,
-                  translateY: 0,
-                }}
-                initial={{
-                  opacity: 0,
-                  translateY: 20,
-                }}
-                transition={{
-                  delay: 0.4,
-                }}
-                className="lg:text-[2vw] md:text-[2.5vw] text-2xl leading-none mt-6 text-stone-700"
-              >
-                We&apos;ve put faces on billboards, companies in the Fortune
-                500, and influencers on the red carpet. We advertise you in a
-                way that makes people not want to skip.
-              </motion.p>
-              <motion.button
-                animate={{
-                  opacity: 1,
-                  translateY: 0,
-                }}
-                initial={{
-                  opacity: 0,
-                  translateY: 20,
-                }}
-                transition={{
-                  delay: 0.8,
-                }}
-              >
-                <Link href="/offers">
-                  <div className="py-4 lg:text-[2vw] md:text-[2.5vw] text-2xl mt-6 p-2 px-6 rounded-2xl border-2 text-rose-500 border-rose-500 hover:bg-rose-500 hover:text-white transition w-fit font-medium flex items-center">
-                    Join our marketing team{" "}
-                    <FontAwesomeIcon icon={faArrowRight} className="ml-4" />
-                  </div>
-                </Link>
-              </motion.button>
-
-              <motion.div
-                animate={{
-                  opacity: 1,
-                  translateY: 0,
-                }}
-                initial={{
-                  opacity: 0,
-                  translateY: 20,
-                }}
-                transition={{
-                  delay: 1.2,
-                }}
-                className="mt-6"
-              >
-                <p className="text-xl font-light text-stone-600">Trusted by</p>
-                <div className="flex flex-wrap gap-6 mt-4">
-                  {[
-                    "apple.png",
-                    "microsoft.png",
-                    "nvidia.png",
-                    "samsung.png",
-                    "tesla.png",
-                  ].map((x, i) => {
-                    return (
-                      <div className="max-h-[40px] max-w-[40px] flex items-center grayscale opacity-50">
-                        <img key={i} src={`/logos/${x}`} />
-                      </div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            </div>
-            <div>
-              <Image src="" />
-            </div>
-          </div>
-        </div>*/}
-
         <PresentMomentDiv />
 
         <BenefitsDiv />

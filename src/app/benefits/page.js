@@ -25,9 +25,9 @@ const BlackOutDiv = () => {
   return (
     <div
       ref={scrollRef}
-      className="bg-gradient-to-b from-black to-slate-900 text-white w-full h-[150vh] flex flex-col items-center"
+      className="bg-gradient-to-b from-black to-slate-900 text-white w-full h-[150vh] lg:flex md:flex hidden flex-col items-center"
     >
-      <div className="sticky top-[100px] flex flex-col items-center h-[80vh] text-center w-full">
+      <div className="sticky top-1/4 flex flex-col items-center h-[80vh] text-center w-full">
         <div className="lg:w-[85%] md:w-[90%] w-full px-4 absolute bottom-[70%] flex flex-col items-center">
           <p
             style={{ WebkitTextStroke: "1px white" }}
@@ -151,10 +151,10 @@ export default function BenefitsPage() {
       <div className="border-b w-full flex flex-col items-center">
         <div className="lg:w-[85%] md:w-[90%] border-x border-stone-300 w-full px-8 py-16 flex justify-center lg:flex-row flex-col lg:space-x-16 items-center">
           <div className="flex-1">
-            <p className="text-2xl uppercase text-stone-600 font-medium">
+            <p className="lg:text-2xl text-xl uppercase text-stone-600 font-medium">
               Benefits
             </p>
-            <p className="mt-2 text-5xl font-semibold">
+            <p className="mt-2 lg:text-5xl md:text-4xl text-3xl font-semibold">
               Jobs take <span className="text-indigo-500">~50%</span> of your
               day.
               <br />
@@ -163,13 +163,16 @@ export default function BenefitsPage() {
             </p>
 
             <div className="mt-4">
-              <p className="text-2xl font-medium">
+              <p className="lg:text-2xl md:text-xl text-lg font-medium">
                 Perks of a VibeMagnet career
               </p>
-              <div className="mt-4 flex flex-wrap gap-2 text-lg">
+              <div className="mt-4 flex flex-wrap gap-2 lg:text-lg text-base">
                 {benefits.map((x, i) => {
                   return (
-                    <div key={i} className="border border-stone-400 bg-stone-50 text-stone-600 rounded-lg p-1 px-2 shadow-md shadow-stone-100">
+                    <div
+                      key={i}
+                      className="border border-stone-400 bg-stone-50 text-stone-600 rounded-lg p-1 px-2 shadow-md shadow-stone-100"
+                    >
                       <FontAwesomeIcon
                         icon={faCheck}
                         className="text-emerald-500 mr-0.5"
@@ -182,23 +185,27 @@ export default function BenefitsPage() {
             </div>
           </div>
 
-          <div className="flex-1 lg:w-fit w-full lg:mt-0 mt-16 flex flex-wrap justify-center gap-4">
+          <div className="flex-1 lg:w-fit w-full lg:mt-0 mt-8 flex xl:flex-row lg:flex-col md:flex-row flex-col justify-center gap-4">
             <img
               src="/benefits/familysleeping.jpg"
-              className="rounded-lg w-[45%]"
-              alt={'Family Sleeping'}
+              className="rounded-lg xl:w-[45%] lg:w-full md:w-[45%] w-full"
+              alt={"Family Sleeping"}
             />
-            <img src="/benefits/working.jpg" className="rounded-lg w-[45%]" alt={'Working'} />
+            <img
+              src="/benefits/working.jpg"
+              className="rounded-lg xl:w-[45%] lg:w-full md:w-[45%] w-full"
+              alt={"Working"}
+            />
           </div>
         </div>
       </div>
 
-      <div className="border-x border-stone-300 bg-gradient-to-br from-stone-800 via-indigo-800 to-purple-900 w-full bg-fixed">
-        <div className="flex flex-col items-center justify-center text-center py-16 px-8 bg-gradient-to-br from-white/5 to-rose-500/10">
-          <p className="text-2xl text-indigo-300 font-medium">
+      <div className="bg-gradient-to-br from-stone-800 via-indigo-800 to-purple-900 w-full bg-fixed">
+        <div className="flex flex-col items-center justify-center text-center md:py-16 py-8 px-8 bg-gradient-to-br from-white/5 to-rose-500/10">
+          <p className="lg:text-3xl md:text-2xl text-xl text-indigo-300 font-medium">
             Why Choose VibeMagnet?
           </p>
-          <p className="mt-2 text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-stone-100 via-indigo-200 to-slate-50">
+          <p className="mt-2 lg:text-6xl md:text-5xl text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-stone-100 via-indigo-200 to-slate-50">
             VibeMagnet has everything
             <br />
             you need to be successful.
@@ -230,12 +237,12 @@ export default function BenefitsPage() {
       </div>
       <div className="border-x border-t border-stone-300 lg:w-[85%] md:w-[90%] w-full py-8 px-8">
         <div className="w-full h-full flex xl:flex-row flex-col xl:space-x-4">
-          <div className="flex-1 xl:sticky top-[100px] h-fit">
+          <div className="flex-1 xl:sticky top-[160px] h-fit">
             <div className="flex items-center">
               <div className="">
                 <FontAwesomeIcon
                   icon={faCheckCircle}
-                  className="text-emerald-500 text-7xl"
+                  className="text-emerald-500 lg:text-7xl md:text-6xl text-5xl"
                 />
               </div>
               <div className="ml-5 border-l border-dashed border-stone-300 pl-5 flex items-center -space-x-3">
@@ -247,13 +254,13 @@ export default function BenefitsPage() {
                       width={70}
                       height={70}
                       key={i}
-                      className="rounded-full outline outline-4 outline-white border border-stone-200"
+                      className="lg:w-[70px] md:w-[60px] w-[50px] rounded-full outline outline-4 outline-white border border-stone-200"
                     />
                   );
                 })}
               </div>
             </div>
-            <p className="mt-4 xl:text-7xl lg:text-6xl text-5xl uppercase text-black font-semibold">
+            <p className="mt-4 xl:text-7xl lg:text-6xl text-3xl uppercase text-black font-semibold">
               Success stories from employees, that proves that
               <br />
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-indigo-500 to-rose-500">
@@ -278,7 +285,7 @@ export default function BenefitsPage() {
                           alt={x.quote.text}
                           width={100}
                           height={100}
-                          className="lg:w-[100px] w-[70px] rounded-full outline outline-2 outline-white border border-stone-200"
+                          className="lg:relative md:relative absolute lg:translate-x-0 md:translate-x-0 -translate-x-10 lg:translate-y-0 md:translate-y-0 -translate-y-10 lg:w-[100px] md:w-[70px] w-[60px] rounded-full outline outline-2 outline-white border border-stone-200"
                         />
                         <div>
                           <p className="lg:text-2xl md:text-2xl text-xl lg:font-medium md:font-medium font-normal">
@@ -326,7 +333,7 @@ export default function BenefitsPage() {
 
       <div className="border-t border-stone-300 py-12 lg:w-[85%] w-full px-4">
         <div className="flex lg:flex-row flex-col lg:items-center md:items-center lg:space-x-12 lg:space-y-0 space-y-8">
-          <div>
+          <div className='flex flex-col lg:text-left text-center'>
             <p className="uppercase text-stone-600 text-xl">
               VibeMagnet Careers
             </p>
@@ -337,15 +344,18 @@ export default function BenefitsPage() {
             </p>
           </div>
           <div className="flex-1">
-            <div className="border border-rose-500 lg:text-4xl text-3xl flex items-center space-x-1 p-1 rounded-full">
+            <div className="border border-rose-500 lg:text-4xl md:text-3xl text-2xl flex lg:flex-row flex-col lg:items-center lg:space-x-1 lg:space-y-0 space-y-2 p-1 lg:rounded-full rounded-xl">
               <input
-                className="flex-1 rounded-full focus:outline-sky-400 px-5 py-2 h-[60px] font-light placeholder:text-stone-400"
+                className="lg:mt-0 mt-0.5 flex-1 lg:rounded-full rounded-t-xl focus:outline-sky-400 lg:px-5 px-2 py-2 h-[60px] font-light placeholder:text-stone-400"
                 placeholder="Enter your email to apply now."
                 onChange={(e) => setEmail(e.target.value)}
               />
               <Link href={`/apply?email="${email}"`}>
-                <div className="px-4 py-2 bg-rose-500 rounded-full text-white font-medium text-2xl h-[60px] flex items-center">
-                  Apply <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
+                <div className="px-4 lg:py-2 py-1 bg-rose-500 lg:rounded-full rounded-xl lg:w-fit w-full text-white font-medium text-2xl h-[60px] flex items-center">
+                  <span className='flex-1'>
+                    Apply
+                  </span>
+                  <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
                 </div>
               </Link>
             </div>

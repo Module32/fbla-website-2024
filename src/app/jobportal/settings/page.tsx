@@ -128,7 +128,7 @@ export default function JobPortal() {
             <p className="text-3xl font-medium">Settings</p>
           </div>
 
-          <div className="px-6 border-b flex items-center space-x-4 font-medium sticky top-[71px] bg-white">
+          <div className="px-6 border-b flex items-center space-x-4 font-medium sticky top-[129px] bg-white">
             {[
               {
                 name: "Personal Information",
@@ -162,7 +162,7 @@ export default function JobPortal() {
                   <input
                     className="mt-2 w-fit bg-stone-50 border border-stone-300 rounded-lg p-2 px-3 placeholder:text-stone-400 shadow-inner"
                     placeholder="First Name"
-                    defaultValue={"Ekya"}
+                    defaultValue={"Brinmeet"}
                   />
                 </div>
 
@@ -171,7 +171,7 @@ export default function JobPortal() {
                   <input
                     className="mt-2 w-fit bg-stone-50 border border-stone-300 rounded-lg p-2 px-3 placeholder:text-stone-400 shadow-inner"
                     placeholder="Last Name"
-                    defaultValue={"Dogra"}
+                    defaultValue={"Singh Soin"}
                   />
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function JobPortal() {
                   <input
                     className="mt-2 bg-stone-50 border border-stone-300 rounded-lg p-2 px-3 placeholder:text-stone-400 shadow-inner"
                     placeholder="Last Name"
-                    defaultValue={"dograekya@gmail.com"}
+                    defaultValue={"brinmeet.soin@email.com"}
                   />
                 </div>
                 <div>
@@ -241,17 +241,17 @@ export default function JobPortal() {
                   {
                     icon: faLinkedin,
                     color: "text-blue-500",
-                    data: "Ekya Dogra",
+                    data: "Brinmeet Singh Soin",
                   },
                   {
                     icon: faYoutube,
                     color: "text-red-500",
-                    data: "Dogra Man",
+                    data: "Brinmeet Boy",
                   },
                   {
                     icon: faTwitter,
                     color: "text-sky-500",
-                    data: "EkyaRai",
+                    data: "@Brinmeet",
                   },
                   {
                     icon: faSnapchat,
@@ -261,7 +261,7 @@ export default function JobPortal() {
                   {
                     icon: faGithub,
                     color: "text-black",
-                    data: "Module32",
+                    data: "Brinmeet Soin",
                   },
                   {
                     icon: faGitlab,
@@ -271,7 +271,7 @@ export default function JobPortal() {
                   {
                     icon: faBriefcase,
                     color: "text-stone-500",
-                    data: "https://ekya.rai",
+                    data: "https://brinmeet.soin",
                   },
                 ].map((x, i) => {
                   return (
