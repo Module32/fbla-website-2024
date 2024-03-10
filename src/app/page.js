@@ -896,7 +896,7 @@ function TestimonialsDiv() {
       text: "Before VibeMagnet, we were struggling to get even 1,000 views on our videos. Since getting connected with a VibeMagnet agent, we've been averaging 100,000 views per video.",
       author: {
         name: "Vijay Salgaonkar",
-        image: "/ajaydevgn.png",
+        image: "/people/ajaydevgn.png",
       },
       company: {
         name: "@askvijay",
@@ -908,7 +908,7 @@ function TestimonialsDiv() {
       text: "I am Iron Man. But without VibeMagnet Marketing, no one would have known that. VibeMagnet helped me go from zero to a hero -- quite literally.",
       author: {
         name: "Tony Stark",
-        image: "/tonystark.png",
+        image: "/people/tonystark.png",
       },
       company: {
         name: "Stark Industries",
@@ -920,7 +920,7 @@ function TestimonialsDiv() {
       text: "Just to be clear, VibeMagnet didn't market us. We marketed VibeMagnet, when it was a startup. But VibeMagnet has grown so much, that we trust them 200%.",
       author: {
         name: "Tim Cook",
-        image: "/timcook.png",
+        image: "/people/timcook.png",
       },
       company: {
         name: "Apple",
