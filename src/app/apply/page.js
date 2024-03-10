@@ -652,7 +652,7 @@ export default function Application() {
                 className="fixed top-0 left-0"
               >
                 <div className="bg-black/50 w-screen h-screen fixed left-0 top-0 flex flex-col items-center justify-center">
-                  <div className="bg-white rounded-2xl border border-stone-300">
+                  <div className="translate-y-[15%] bg-white rounded-2xl border border-stone-300">
                     <div className="p-6">
                       <p className="text-2xl flex items-center font-medium">
                         <FontAwesomeIcon

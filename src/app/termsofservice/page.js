@@ -7,7 +7,7 @@ export default function TermsOfService() {
   return (
     <main className="flex flex-col items-center">
       <div className="lg:w-[85%] md:w-[90%] w-full border-x border-stone-300">
-        <div className="prose lg:prose-xl md:prose-lg prose-base lg:px-8 px-4 py-6">
+        <div className="prose lg:prose-xl md:prose-lg prose-base lg:px-8 px-4 py-8">
           <h1>VibeMagnet Terms of Service</h1>
           <p>Our Terms of Service were last updated on March 9th, 2024.</p>
           <p>

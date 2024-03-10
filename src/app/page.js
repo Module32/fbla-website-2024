@@ -467,7 +467,7 @@ function BenefitsDiv() {
             transition={{ duration: 10, repeat: Infinity }}
           />
         </div>
-        <p className="font-mono text-emerald-500">{timer}/5</p>
+        <p className="font-mono text-emerald-500">{timer + 1}/5</p>
       </div>
     </div>
   );

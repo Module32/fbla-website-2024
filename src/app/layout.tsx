@@ -19,6 +19,7 @@ import {
   faTiktok,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import { jobs } from "../../lib/globalData";
 
 export const metadata = {
@@ -238,7 +239,7 @@ export default function RootLayout({
                 </Link>
                 <Link href="/application">
                   <p className="border-transparent hover:underline hover:border-white decoration-[1px] underline-offset-8 mb-2">
-                    Job Application
+                    Apply
                   </p>
                 </Link>
                 <Link href="/contact">

@@ -3,7 +3,7 @@
 
 Here is the source code for our website, that shows all its inner workings. Our website uses *industry-standard* technologies, including:
 - TypeScript & JavaScript
-- Next.JS
+- Next.js
 - TailwindCSS
 - Vercel
 

@@ -8,11 +8,11 @@ const navbarLinks = [
       link: "/services",
     },
     {
-      name: "Job Offers",
+      name: "Offers",
       link: "/offers",
     },
     {
-      name: "Job Application",
+      name: "Application",
       link: "/apply",
     },
     {
@@ -22,6 +22,10 @@ const navbarLinks = [
     {
       name: 'Job Portal',
       link: '/jobportal'
+    },
+    {
+      name: "Citations",
+      link: "/citations"
     }
   ];
 

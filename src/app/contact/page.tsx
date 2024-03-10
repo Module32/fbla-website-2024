@@ -318,44 +318,6 @@ function JobPortalDiv() {
           <p className="mt-8 xl:text-3xl lg:text-2xl md:text-xl text-lg text-stone-500 font-light">
             {new Date().getFullYear()}© VibeMagnet Marketing Inc.
           </p>
-
-          <div className="mt-6 bg-white border border-stone-300 p-2 rounded-lg w-fit">
-            <p
-              className="font-medium hover:cursor-pointer hover:text-zinc-500"
-              onClick={() => setShowSources(!showSources)}
-            >
-              Sources used in our website{" "}
-              <FontAwesomeIcon
-                icon={showSources ? faAngleUp : faAngleDown}
-                className="ml-1"
-              />
-            </p>
-            {showSources && (
-              <div className="mt-2 flex flex-col space-y-1">
-                {[
-                  "https://nextjs.org/",
-                  "https://www.w3schools.com/",
-                  "https://www.sprinklesmedia.com/confectionary/what-is-a-digital-media-agency",
-                  "https://searchengineland.com/guide/what-is-seo",
-                  "https://www.digitalmarketingagency.com/",
-                  "https://www.yokellocal.com/blog/what-does-a-digital-marketing-agency-do",
-                  "https://work.chron.com/prepare-account-executive-agency-interview-17515.html",
-                  "https://cxr.agency/",
-                  "https://www.brightedge.com/",
-                ].map((x, i) => {
-                  return (
-                    <div key={i}>
-                      <Link href={x}>
-                        <p className="text-sky-500 underline" key={i}>
-                          {x}
-                        </p>
-                      </Link>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
         </div>
       </div>
     </div>
