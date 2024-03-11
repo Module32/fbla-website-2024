@@ -53,7 +53,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="z-[2000] sticky top-0 w-full">
-          <div className="backdrop-blur-xl w-full py-2 bg-gradient-to-r from-indigo-300/75 to-purple-300/75 text-stone-800 uppercase font-medium italic overflow-x-hidden flex space-x-4">
+          <div className="backdrop-blur-xl w-full py-2 bg-gradient-to-r from-indigo-300/75 to-purple-300/75 text-stone-800 uppercase font-medium italic overflow-x-hidden flex space-x-4 overflow-hidden">
             <div className="py-1 animate-marquee whitespace-nowrap flex space-x-4">
               {new Array(10).fill("").map((x, i) => {
                 return (
@@ -146,7 +146,7 @@ export default function RootLayout({
                 opacity: 0,
               }}
             >
-              <div className="-translate-y-[50%] flex flex-col items-center">
+              <div className="-translate-y-[50%] flex flex-col items-center px-4 text-center">
                 <motion.div
                   className="p-4 bg-white rounded-full mb-12"
                   animate={{ scale: [0.5, 1, 0.5], opacity: [0.5, 0.7, 0.5] }}
