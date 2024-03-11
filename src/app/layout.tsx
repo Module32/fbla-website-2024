@@ -141,7 +141,7 @@ export default function RootLayout({
         <AnimatePresence>
           {scroll === true && (
             <motion.div
-              className="z-[100] bg-black/50 fixed w-screen h-screen flex flex-col items-center justify-center text-white"
+              className="z-[100] bg-black/75 fixed w-screen h-screen flex flex-col items-center justify-center text-white"
               exit={{
                 opacity: 0,
               }}
@@ -162,7 +162,9 @@ export default function RootLayout({
                   />
                 </motion.div>
                 <p className="mt-2 font-medium lg:text-2xl md:text-xl text-lg">
-                  Hello, judges! Start scrolling at any time to check out this page!
+                  Hello, judges! Scroll now to check out this page!
+                  <br />
+                  We&apos;ll be going through these pages quickly, so you may have to scroll fast to see the entire page.
                 </p>
               </div>
             </motion.div>
