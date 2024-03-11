@@ -1,3 +1,7 @@
+// @refresh reset
+
+"use client";
+
 import Link from "next/link";
 import "../globals.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,6 +11,7 @@ import {
   faEnvelope,
   faGripLinesVertical,
   faMagnet,
+  faMouse,
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react";
 import LinksMenu from "@/components/navbar/LinksMenu";
@@ -21,32 +26,33 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { jobs } from "../../lib/globalData";
-
-export const metadata = {
-  openGraph: {
-    title: "VibeMagnet ∙ Marketers to help you stand out in the market.",
-    description:
-      "VibeMagnet puts faces on billboards, companies in the Fortune 500, and influencers on the red carpet.\nOur marketing works. You focus on what you do best, and we'll do the rest.",
-    url: "https://vibemagnet.vercel.app/",
-    siteName: "VibeMagnet",
-    images: {
-      url: "/metadataimg.png",
-      width: 838,
-      height: 471,
-      alt: "Image",
-    },
-  },
-};
+import { useCallback, useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import _debounce from "lodash/debounce";
+import useDetectScroll, {
+  Axis,
+  Direction,
+} from "@smakss/react-scroll-direction";
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const { scrollDir, scrollPosition } = useDetectScroll();
+  const [scroll, setScroll] = useState(true);
+
+  useEffect(() => {
+    setScroll(true);
+    if (scrollPosition.top > 0.5) {
+      setScroll(false);
+    }
+  }, [scrollPosition]);
+
   return (
     <html lang="en">
       <body>
-        <div className="z-[100] sticky top-0 w-full">
+        <div className="z-[2000] sticky top-0 w-full">
           <div className="backdrop-blur-xl w-full py-2 bg-gradient-to-r from-indigo-300/75 to-purple-300/75 text-stone-800 uppercase font-medium italic overflow-x-hidden flex space-x-4">
             <div className="py-1 animate-marquee whitespace-nowrap flex space-x-4">
               {new Array(10).fill("").map((x, i) => {
@@ -131,6 +137,37 @@ export default function RootLayout({
             </div>
           </div>
         </div>
+
+        <AnimatePresence>
+          {scroll === true && (
+            <motion.div
+              className="z-[100] bg-black/50 fixed w-screen h-screen flex flex-col items-center justify-center text-white"
+              exit={{
+                opacity: 0,
+              }}
+            >
+              <div className="-translate-y-[50%] flex flex-col items-center">
+                <motion.div
+                  className="p-4 bg-white rounded-full mb-12"
+                  animate={{ scale: [0.5, 1, 0.5], opacity: [0.5, 0.7, 0.5] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                />
+                <motion.div
+                  animate={{ translateY: [0, -40, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  <FontAwesomeIcon
+                    icon={faMouse}
+                    className="lg:text-6xl md:text-5xl text-4xl"
+                  />
+                </motion.div>
+                <p className="mt-2 font-medium lg:text-2xl md:text-xl text-lg">
+                  Hello, judges! Start scrolling anytime you&apos;d like to check out this page!
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {children}
 
