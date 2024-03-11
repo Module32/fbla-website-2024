@@ -162,7 +162,7 @@ export default function RootLayout({
                   />
                 </motion.div>
                 <p className="mt-2 font-medium lg:text-2xl md:text-xl text-lg">
-                  Hello, judges! Start scrolling anytime you&apos;d like to check out this page!
+                  Hello, judges! Start scrolling at any time to check out this page!
                 </p>
               </div>
             </motion.div>
