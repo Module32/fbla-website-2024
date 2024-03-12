@@ -87,7 +87,7 @@ export default function Home() {
       </div>
 
       <div className="lg:w-[85%] md:w-[90%] w-full py-2 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-600 text-white uppercase font-normal italic overflow-x-hidden flex space-x-4">
-        <div className="py-1 animate-marquee whitespace-nowrap flex space-x-4">
+        <div className="py-1 eeemarquee whitespace-nowrap flex space-x-4">
           {new Array(5).fill("").map((x, i) => {
             return (
               <div key={i} className="flex space-x-4">

@@ -32,7 +32,7 @@ const Builder = ({
   return (
     <div
       ref={scrollRef}
-      className="w-full lg:px-16 md:px-8 px-4 h-[150vh] pb-12 flex flex-col items-center py-12"
+      className="w-screen overflow-hidden lg:px-16 md:px-8 px-4 h-[150vh] pb-12 flex flex-col items-center py-12"
       id={header.split(" ").join("-").toLowerCase()}
     >
       <motion.div
@@ -337,10 +337,10 @@ export default function Contact() {
     <>
       <div
         ref={scrollRef}
-        className="overflow-hidden w-screen backdrop-blur bg-gradient-to-t from-transparent to-white fixed z-10"
+        className="backdrop-blur bg-gradient-to-t from-transparent to-white fixed z-10"
       >
         <motion.div
-          className="py-4 flex lg:space-x-16 md:space-x-12 space-x-6 items-center justify-center"
+          className="w-screen py-4 flex lg:space-x-16 md:space-x-12 space-x-6 items-center justify-center"
           style={{ scale: useTransform(scrollYProgress, [0.6, 1], [1, 0.6]) }}
         >
           {[
