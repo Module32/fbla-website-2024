@@ -931,7 +931,7 @@ function TestimonialsDiv() {
   ];
 
   return (
-    <div className="border-t border-stone-300 lg:h-[70vh] md:h-[80vh] bg-gradient-to-br from-fuchsia-100 to-rose-50 flex justify-center items-center">
+    <div className="border-t border-stone-300 lg:min-h-[70vh] md:min-h-[80vh] bg-gradient-to-br from-fuchsia-100 to-rose-50 flex justify-center items-center">
       <div
         className="px-4 text-purple-500 h-full flex items-center hover:cursor-pointer bg-gradient-to-r from-white/75 hover:text-purple-700 transition"
         onClick={() =>

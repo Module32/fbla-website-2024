@@ -32,15 +32,16 @@ const Builder = ({
   return (
     <div
       ref={scrollRef}
-      className="w-screen overflow-hidden lg:px-16 md:px-8 px-4 h-[150vh] pb-12 flex flex-col items-center py-12"
+      className="w-screen lg:px-16 md:px-8 px-4 h-[150vh] pb-12 flex flex-col items-center py-12"
+      style={{ overflow: 'clip' }}
       id={header.split(" ").join("-").toLowerCase()}
     >
       <motion.div
-        className=" sticky top-1/2 -translate-y-[40%] flex flex-col justify-center"
+        className="sticky top-1/2 -translate-y-[30%] flex flex-col justify-center"
         style={{ opacity: useTransform(scrollYProgress, [0.25, 0.35], [0, 1]) }}
       >
         <motion.p
-          className=" w-full animate-pulse fixed whitespace-nowrap -z-10 lg:text-[30vw] md:text-[40vw] text-[50vw] text-transparent"
+          className="w-full animate-pulse fixed whitespace-nowrap -z-10 lg:text-[30vw] md:text-[40vw] text-[50vw] text-transparent"
           style={{
             translateX: useTransform(
               scrollYProgress,
@@ -335,12 +336,12 @@ export default function Contact() {
 
   return (
     <>
-      <div
+      <motion.div
         ref={scrollRef}
-        className="backdrop-blur bg-gradient-to-t from-transparent to-white fixed z-10"
+        className=" w-screen bg-gradient-to-t from-transparent to-white fixed z-10"
       >
         <motion.div
-          className="w-screen py-4 flex lg:space-x-16 md:space-x-12 space-x-6 items-center justify-center"
+          className="py-4 flex lg:space-x-16 md:space-x-12 space-x-6 items-center justify-center"
           style={{ scale: useTransform(scrollYProgress, [0.6, 1], [1, 0.6]) }}
         >
           {[
@@ -376,8 +377,8 @@ export default function Contact() {
             );
           })}
         </motion.div>
-      </div>
-
+      </motion.div>
+      
       <ContactUsHeaderDiv />
       <EmailDiv />
       <MailDiv />

@@ -86,7 +86,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="lg:w-[85%] md:w-[90%] w-full py-2 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-600 text-white uppercase font-normal italic overflow-x-hidden flex space-x-4">
+      <div className="lg:w-[85%] md:w-[90%] w-full backdrop-blur-xl py-2 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-600 text-white uppercase font-medium italic overflow-x-hidden flex space-x-4">
         <div className="py-1 animate-marquee whitespace-nowrap lg:flex hidden space-x-4">
           {new Array(5).fill("").map((x, i) => {
             return (
@@ -130,10 +130,8 @@ export default function Home() {
         </div>
 
         <p className="whitespace-nowrap overflow-hidden lg:hidden flex space-x-4 w-full justify-center">
-          <span>🤑 Good pay</span>
-          <span>🛳️ Guaranteed vacations</span>
-          <span>💼 Fun workspace</span>
-          <span>❤️ Actually have fun</span>
+          <span>💼 We&apos;re hiring</span>
+          <span>💵 Jobs available</span>
         </p>
       </div>
 
@@ -354,7 +352,7 @@ export default function Home() {
           })}
           {filteredJobs.length === 0 && (
             <p className="text-stone-700 font-normal">
-              Sorry! We couldn&apos;t find any jobs wtih the search query{" "}
+              Sorry! We couldn&apos;t find any jobs with the search query{" "}
               <span className="border-b-2 border-sky-500 text-black font-medium break-all">
                 &quot;{search}&quot;
               </span>

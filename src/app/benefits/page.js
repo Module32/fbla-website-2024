@@ -25,81 +25,83 @@ const BlackOutDiv = () => {
   return (
     <div
       ref={scrollRef}
-      className="bg-gradient-to-b from-black to-slate-900 text-white w-full h-[150vh] lg:flex md:flex hidden flex-col items-center"
+      className="bg-[url('/homepage/earth.jpeg')] bg-cover bg-center bg-fixed text-white w-full lg:flex md:flex hidden flex-col items-center"
     >
-      <div className="sticky top-1/4 flex flex-col items-center h-[80vh] text-center w-full">
-        <div className="lg:w-[85%] md:w-[90%] w-full px-4 absolute bottom-[70%] flex flex-col items-center">
-          <p
-            style={{ WebkitTextStroke: "1px white" }}
-            className="absolute xl:text-8xl lg:text-7xl md:text-6xl text-5xl font-semibold text-white -z-10"
-          >
-            <motion.span
-              style={{
-                opacity: useTransform(scrollYProgress, [0.15, 0.2], [0, 1]),
-              }}
+      <div className="bg-gradient-to-b from-black via-transparent to-black lg:flex md:flex hidden flex-col items-center w-full h-[150vh]">
+        <div className="sticky top-1/4 flex flex-col items-center h-[80vh] text-center w-full">
+          <div className="lg:w-[85%] md:w-[90%] w-full px-4 absolute bottom-[70%] flex flex-col items-center">
+            <p
+              style={{ WebkitTextStroke: "1px white" }}
+              className="absolute xl:text-8xl lg:text-7xl md:text-6xl text-5xl font-semibold text-white -z-10"
             >
-              Even when the world goes dark,
-            </motion.span>
-            <br />
-            <motion.span
+              <motion.span
+                style={{
+                  opacity: useTransform(scrollYProgress, [0.15, 0.2], [0, 1]),
+                }}
+              >
+                Even when the world goes dark,
+              </motion.span>
+              <br />
+              <motion.span
+                style={{
+                  opacity: useTransform(scrollYProgress, [0.25, 0.3], [0, 1]),
+                }}
+              >
+                VibeMagnet keeps the lights on.
+              </motion.span>
+            </p>
+            <motion.div
+              className="absolute p-36 bg-gradient-to-br from-amber-200 via-amber-100 to-amber-300 z-0 rounded-full left-1/2"
               style={{
-                opacity: useTransform(scrollYProgress, [0.25, 0.3], [0, 1]),
+                opacity: useTransform(scrollYProgress, [0.35, 0.4], [0, 1]),
+                scale: useTransform(scrollYProgress, [0.35, 0.4], [1.5, 1]),
               }}
+            />
+            <p
+              style={{ WebkitTextStroke: "1.5px black" }}
+              className="absolute xl:text-8xl lg:text-7xl md:text-6xl text-5xl font-semibold text-transparent z-10"
             >
-              VibeMagnet keeps the lights on.
-            </motion.span>
-          </p>
-          <motion.div
-            className="absolute p-36 bg-gradient-to-br from-amber-200 via-amber-100 to-amber-300 z-0 rounded-full left-1/2"
-            style={{
-              opacity: useTransform(scrollYProgress, [0.35, 0.4], [0, 1]),
-              scale: useTransform(scrollYProgress, [0.35, 0.4], [1.5, 1]),
-            }}
-          />
-          <p
-            style={{ WebkitTextStroke: "1.5px black" }}
-            className="absolute xl:text-8xl lg:text-7xl md:text-6xl text-5xl font-semibold text-transparent z-10"
-          >
-            <motion.span
-              style={{
-                opacity: useTransform(scrollYProgress, [0.15, 0.2], [0, 1]),
-              }}
-            >
-              Even when the world goes dark,
-            </motion.span>
-            <br />
-            <motion.span
-              style={{
-                opacity: useTransform(scrollYProgress, [0.25, 0.3], [0, 1]),
-              }}
-            >
-              VibeMagnet keeps the lights on.
-            </motion.span>
-          </p>
-        </div>
+              <motion.span
+                style={{
+                  opacity: useTransform(scrollYProgress, [0.15, 0.2], [0, 1]),
+                }}
+              >
+                Even when the world goes dark,
+              </motion.span>
+              <br />
+              <motion.span
+                style={{
+                  opacity: useTransform(scrollYProgress, [0.25, 0.3], [0, 1]),
+                }}
+              >
+                VibeMagnet keeps the lights on.
+              </motion.span>
+            </p>
+          </div>
 
-        <motion.div
-          className="z-20 bg-gradient-to-b from-transparent via-black/90 backdrop-blur-sm h-[60vh] to-transparent absolute bottom-[20%] pt-12 w-full flex flex-col items-center justify-center text-center"
-          style={{
-            opacity: useTransform(scrollYProgress, [0.55, 0.6], [0, 1]),
-            scale: useTransform(scrollYProgress, [0.55, 0.6], [0.9, 1]),
-          }}
-        >
-          <p className="text-4xl leading-snug">
-            Through pandemics, market crashes, and unstable economies,
-            <br />
-            VibeMagnet employees are guaranteed{" "}
-            <span className="rounded-xl bg-gradient-to-r from-cyan-100 via-cyan-600 to-cyan-300 outline outline-2 outline-offset-2 outline-stone-600 p-[1px]">
-              <span className="bg-black/80 rounded-xl px-3">
-                <FontAwesomeIcon
-                  icon={faLock}
-                  className="text-cyan-500 text-xl mb-1.5"
-                />{" "}
-                job security.
+          <motion.div
+            className="z-20 bg-gradient-to-b from-transparent via-black/90 backdrop-blur-sm h-[60vh] to-transparent absolute bottom-[20%] pt-12 w-full flex flex-col items-center justify-center text-center"
+            style={{
+              opacity: useTransform(scrollYProgress, [0.55, 0.6], [0, 1]),
+              scale: useTransform(scrollYProgress, [0.55, 0.6], [0.9, 1]),
+            }}
+          >
+            <p className="text-4xl leading-snug">
+              Through pandemics, market crashes, and unstable economies,
+              <br />
+              VibeMagnet employees are guaranteed{" "}
+              <span className="rounded-xl bg-gradient-to-r from-cyan-100 via-cyan-600 to-cyan-300 outline outline-2 outline-offset-2 outline-stone-600 p-[1px]">
+                <span className="bg-black/80 rounded-xl px-3">
+                  <FontAwesomeIcon
+                    icon={faLock}
+                    className="text-cyan-500 text-xl mb-1.5"
+                  />{" "}
+                  job security.
+                </span>
               </span>
-            </span>
-          </p>
-        </motion.div>
+            </p>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
@@ -112,14 +114,14 @@ export default function BenefitsPage() {
     {
       name: "Diverse Experience",
       header:
-        "Work in a company where you don't have to find your people -- everyone is.",
+        "At VibeMagnet, you don't have to find your kind of people -- everyone already is.",
       desc: "VibeMagnet hires all kinds of people, from all kinds of places, for all kinds of professions. We're focused on helping other companies, so any talent is good talent to us.",
       img: "/benefits/diverse.jpg",
     },
     {
       name: "Work Ethic",
       header:
-        "We don't have to work hard to finish hard work. We make things happen, quick and efficiently.",
+        "We don't have to work hard to finish hard work. We make things happen, quickly and efficiently.",
       desc: "We believe in hard work and rigor at VibeMagnet, in a community where everyone's contributing towards common goals. And here, your hard work is rewarded with proper job benefits.",
       img: "/benefits/ethics.jpg",
     },
@@ -127,7 +129,7 @@ export default function BenefitsPage() {
       name: "Remote Work",
       header:
         "Creativity doesn't have to flourish in just the office -- it can happen right from your home.",
-      desc: "VibeMagnet is flexible in the 21st century, and we adapt to our employee's needs -- not the other way around. Find a position that you like, and it's more than likely you'll be able to work it from home.",
+      desc: "VibeMagnet is flexible in the 21st century. We adapt to our employees' needs -- not the other way around. Find a position that you like, and it's more than likely you'll be able to work it from home.",
       img: "/benefits/remotework.jpeg",
     },
     {
@@ -333,7 +335,7 @@ export default function BenefitsPage() {
 
       <div className="border-t border-stone-300 py-12 lg:w-[85%] w-full px-4">
         <div className="flex lg:flex-row flex-col lg:items-center md:items-center lg:space-x-12 lg:space-y-0 space-y-8">
-          <div className='flex flex-col lg:text-left text-center'>
+          <div className="flex flex-col lg:text-left text-center">
             <p className="uppercase text-stone-600 text-xl">
               VibeMagnet Careers
             </p>
@@ -352,9 +354,7 @@ export default function BenefitsPage() {
               />
               <Link href={`/apply?email="${email}"`}>
                 <div className="px-4 lg:py-2 py-1 bg-rose-500 lg:rounded-full rounded-xl lg:w-fit w-full text-white font-medium text-2xl h-[60px] flex items-center">
-                  <span className='flex-1'>
-                    Apply
-                  </span>
+                  <span className="flex-1">Apply</span>
                   <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
                 </div>
               </Link>

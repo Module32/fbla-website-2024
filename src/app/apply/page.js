@@ -231,10 +231,6 @@ export default function Application() {
               <p className="font-medium text-stone-600">
                 Yashasvi Pabbisetty{" "}
                 <span className="font-light">VibeMagnet employee</span>
-                <br />
-                <span className="text-xs font-light">
-                  Image courtesy of Srujana Paaji
-                </span>
               </p>
             </div>
           </div>
