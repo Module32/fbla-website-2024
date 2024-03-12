@@ -78,7 +78,7 @@ export default function Home() {
             <Image
               src={`/offerspage/peoplegathered.jpeg`}
               className="grayscale"
-              alt={'People Gathered'}
+              alt={"People Gathered"}
               width={400}
               height={200}
             />
@@ -87,7 +87,7 @@ export default function Home() {
       </div>
 
       <div className="lg:w-[85%] md:w-[90%] w-full py-2 bg-gradient-to-r from-indigo-500 via-sky-500 to-emerald-600 text-white uppercase font-normal italic overflow-x-hidden flex space-x-4">
-        <div className="py-1 animate-marquee whitespace-nowrap flex space-x-4">
+        <div className="py-1 animate-marquee whitespace-nowrap lg:flex hidden space-x-4">
           {new Array(5).fill("").map((x, i) => {
             return (
               <div key={i} className="flex space-x-4">
@@ -108,7 +108,7 @@ export default function Home() {
           })}
         </div>
 
-        <div className="py-1 animate-marquee2 whitespace-nowrap flex space-x-4 absolute">
+        <div className="py-1 animate-marquee2 whitespace-nowrap lg:flex hidden space-x-4 absolute">
           {new Array(5).fill("").map((x, i) => {
             return (
               <div key={i} className="flex space-x-4">
@@ -128,6 +128,13 @@ export default function Home() {
             );
           })}
         </div>
+
+        <p className="whitespace-nowrap overflow-hidden lg:hidden flex space-x-4 w-full justify-center">
+          <span>🤑 Good pay</span>
+          <span>🛳️ Guaranteed vacations</span>
+          <span>💼 Fun workspace</span>
+          <span>❤️ Actually have fun</span>
+        </p>
       </div>
 
       <div className="bg-white border-x border-b sticky top-[129px] border-stone-300 lg:w-[85%] md:w-[90%] w-full py-3 px-8 h-full flex lg:flex-row md:flex-row flex-col lg:items-center md:items-center lg:space-x-2 md:space-x-2 lg:space-y-0 md:space-y-0 space-y-1 font-mono">
@@ -137,7 +144,7 @@ export default function Home() {
           className="focus:outline-none flex-1 lg:py-0 md:py-0 py-2"
           onChange={(e) => setSearch(e.target.value)}
         />
-        <hr className='pb-4 border-stone-300 lg:hidden md:hidden flex' />
+        <hr className="pb-4 border-stone-300 lg:hidden md:hidden flex" />
         <Tippy
           content={
             <div>
@@ -291,7 +298,11 @@ export default function Home() {
         >
           <div>
             <div className="flex items-center border border-stone-300 rounded px-2 py-1 hover:cursor-pointer hover:opacity-60 transition">
-              <span>Filters</span> <FontAwesomeIcon icon={faAngleDown} className="lg:ml-1 md:ml-1 ml-auto" />
+              <span>Filters</span>{" "}
+              <FontAwesomeIcon
+                icon={faAngleDown}
+                className="lg:ml-1 md:ml-1 ml-auto"
+              />
             </div>
           </div>
         </Tippy>
@@ -312,7 +323,10 @@ export default function Home() {
           filters.payRange.max.length > 0 ||
           filters.location.length > 0) && (
           <p className="mb-6 text-xl font-medium bg-sky-500 text-white px-2 py-1 rounded-lg w-fit">
-            <FontAwesomeIcon icon={faExclamation} className='ml-2 mr-3 pr-4 border-r border-sky-200' />
+            <FontAwesomeIcon
+              icon={faExclamation}
+              className="ml-2 mr-3 pr-4 border-r border-sky-200"
+            />
             Filters have been applied.
           </p>
         )}

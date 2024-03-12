@@ -54,7 +54,7 @@ export default function RootLayout({
       <body>
         <div className="z-[2000] sticky top-0 w-full">
           <div className="backdrop-blur-xl w-full py-2 bg-gradient-to-r from-indigo-300/75 to-purple-300/75 text-stone-800 uppercase font-medium italic overflow-x-hidden flex space-x-4">
-            <div className="py-1 animate-marquee whitespace-nowrap flex space-x-4">
+            <div className="py-1 animate-marquee whitespace-nowrap lg:flex hidden space-x-4">
               {new Array(10).fill("").map((x, i) => {
                 return (
                   <div key={i} className="flex space-x-4">
@@ -69,7 +69,7 @@ export default function RootLayout({
               })}
             </div>
 
-            <div className="py-1 animate-marquee2 whitespace-nowrap flex space-x-4 absolute">
+            <div className="py-1 animate-marquee2 whitespace-nowrap lg:flex hidden space-x-4 absolute">
               {new Array(10).fill("").map((x, i) => {
                 return (
                   <div key={i} className="flex space-x-4">
@@ -83,6 +83,11 @@ export default function RootLayout({
                 );
               })}
             </div>
+
+            <p className='whitespace-nowrap overflow-hidden lg:hidden flex space-x-4 w-full justify-center'>
+              <span>💼 We&apos;re hiring</span>
+              <span>💵 Jobs available</span>
+            </p>
           </div>
 
           <div className="bg-white py-5 w-full lg:px-[10vw] md:px-[5vw] px-4 flex items-center border-b border-stone-300">
